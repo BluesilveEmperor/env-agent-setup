@@ -1,0 +1,53 @@
+﻿{
+  "skill_name": "env-agent-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我配置一个Python开发环境",
+      "expected_output": "识别为Python环境，检测当前Python安装状态，生成配置方案，包括Python安装、pip配置、虚拟环境设置等",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我想搭建Android开发环境，需要安装哪些工具？",
+      "expected_output": "识别为Android环境，检测Java、Android SDK、ADB等组件，生成配置方案，包括JDK安装、SDK配置、环境变量设置等",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "setup nodejs development environment",
+      "expected_output": "识别为Node.js环境，检测Node.js、npm、yarn等组件，生成配置方案，包括Node.js安装、npm配置、TypeScript设置等",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我配置鸿蒙开发环境",
+      "expected_output": "识别为HarmonyOS环境，检测DevEco Studio、Hvigor等组件，生成配置方案，包括DevEco Studio安装、SDK配置、DevEco Code安装、OpenHarmony Skills安装等",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "配置Java开发环境，包括Maven和Gradle",
+      "expected_output": "识别为Java环境，检测JDK、Maven、Gradle等组件，生成配置方案，包括JDK安装、构建工具配置等",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "帮我配置鸿蒙开发环境，并安装AI Agent的skills",
+      "expected_output": "识别为HarmonyOS环境，检测本地AI Agent（claude/opencode等），安装OpenHarmony全链路skills（ArkUI/ArkTS/DFX等）",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "配置opencode AI Agent开发环境",
+      "expected_output": "识别为AI Agent环境，检测opencode安装状态，生成配置方案，包括opencode安装、skills目录配置、OpenHarmony skills安装等",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "github访问不了怎么办？",
+      "expected_output": "检测GitHub访问问题，推荐使用SteamCommunity302加速，提供下载地址和使用方法",
+      "files": []
+    }
+  ]
+}
