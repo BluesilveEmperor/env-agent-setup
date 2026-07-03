@@ -1,0 +1,89 @@
+﻿{
+  "skill_name": "env-agent-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我配置一个Python开发环境",
+      "expected_output": "识别为Python环境，检测当前Python安装状态，生成配置方案，包括Python安装、pip配置、虚拟环境设置等",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我想搭建Android开发环境，需要安装哪些工具？",
+      "expected_output": "识别为Android环境，检测Java、Android SDK、ADB等组件，生成配置方案，包括JDK安装、SDK配置、环境变量设置等",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "setup nodejs development environment",
+      "expected_output": "识别为Node.js环境，检测Node.js、npm、yarn等组件，生成配置方案，包括Node.js安装、npm配置、TypeScript设置等",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我配置鸿蒙开发环境",
+      "expected_output": "识别为HarmonyOS环境，检测DevEco Studio、Hvigor等组件，生成配置方案，包括DevEco Studio安装、SDK配置、DevEco Code安装、OpenHarmony Skills安装等",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "配置Java开发环境，包括Maven和Gradle",
+      "expected_output": "识别为Java环境，检测JDK、Maven、Gradle等组件，生成配置方案，包括JDK安装、构建工具配置等",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "帮我配置鸿蒙开发环境，并安装AI Agent的skills",
+      "expected_output": "识别为HarmonyOS环境，检测本地AI Agent（claude/opencode等），安装OpenHarmony全链路skills（ArkUI/ArkTS/DFX等）",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "配置opencode AI Agent开发环境",
+      "expected_output": "识别为AI Agent环境，检测opencode安装状态，生成配置方案，包括opencode安装、skills目录配置、OpenHarmony skills安装等",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "github访问不了怎么办？",
+      "expected_output": "检测GitHub访问问题，推荐使用SteamCommunity302加速，提供下载地址和使用方法",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "帮我安装WSL2并配置Ubuntu",
+      "expected_output": "识别为WSL Linux环境，检测Windows版本和WSL安装状态，生成WSL2安装方案（启用WSL功能+虚拟机平台+内核更新），安装Ubuntu发行版，初始化配置（更新系统+配置清华镜像源+安装基础工具）",
+      "files": ["references/wsl-setup.md", "scripts/setup-wsl.ps1"]
+    },
+    {
+      "id": 10,
+      "prompt": "在WSL里配置Python和Node.js开发环境",
+      "expected_output": "识别为WSL Linux环境，检测已安装的发行版，在WSL内安装Python3/pip/venv和Node.js（nvm），配置pip清华镜像源和npm npmmirror镜像源，验证安装结果",
+      "files": ["references/wsl-dev-env.md", "scripts/setup-wsl-dev-env.ps1"]
+    },
+    {
+      "id": 11,
+      "prompt": "如何在WSL和Windows之间共享文件？",
+      "expected_output": "识别为WSL互操作需求，介绍从Windows访问WSL文件（\\\\wsl$\\<distro>）、从WSL访问Windows文件（/mnt/c/）、配置/etc/wsl.conf启用interop和automount、使用explorer.exe .打开资源管理器",
+      "files": ["references/wsl-interop.md"]
+    },
+    {
+      "id": 12,
+      "prompt": "我想在WSL中安装CentOS，怎么操作？",
+      "expected_output": "识别为WSL Linux环境，说明CentOS不在Microsoft Store中，需要通过wsl --import从tar文件导入安装，提供下载地址、导入命令、初始化配置（创建非root用户、配置华为镜像源）",
+      "files": ["references/wsl-setup.md", "scripts/setup-wsl.ps1"]
+    },
+    {
+      "id": 13,
+      "prompt": "WSL占用内存太高怎么优化？",
+      "expected_output": "识别为WSL管理需求，介绍配置%USERPROFILE%/.wslconfig文件控制内存（memory）、处理器（processors）、交换空间（swap），启用autoMemoryReclaim=gradual自动回收内存，启用sparseVhd磁盘空间回收",
+      "files": ["references/wsl-interop.md", "references/wsl-management.md"]
+    },
+    {
+      "id": 14,
+      "prompt": "帮我在WSL里配置Docker和SSH服务",
+      "expected_output": "识别为WSL高级功能需求，介绍Docker Desktop WSL2后端集成（Settings>General>Use WSL 2 based engine+发行版集成启用），SSH服务配置（安装openssh-server+配置sshd_config+密钥认证+Windows端口转发）",
+      "files": ["references/wsl-advanced.md"]
+    }
+  ]
+}
