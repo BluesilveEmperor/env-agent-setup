@@ -123,31 +123,59 @@ npx skills add openharmonyinsight/openharmony-skills --path C:\Users\GLY\.config
 
 ## hermes 配置
 
+Hermes Agent 是 Nous Research 开源的 AI Agent 框架，支持任意 LLM 提供商（OpenAI、Anthropic、Google、DeepSeek、xAI、本地模型等 20+），跨 Linux / macOS / Windows / WSL 运行，特点包括 Skill 自我学习、跨会话持久记忆、多平台网关、多实例（Profiles）、可主题化与扩展。
+
 ### 安装
 
-Hermes需要手动安装：
+官方提供一键安装脚本（自动配置 uv、Python、虚拟环境与启动器）：
 
-1. 访问GitHub仓库：https://github.com/nicepkg/hermes
-2. 下载最新版本
-3. 解压到本地目录
-4. 添加到PATH环境变量
+```bash
+# macOS / Linux
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 
-### 国内网络安装
+# Windows（PowerShell）
+irm https://hermes-agent.nousresearch.com/install.ps1 | iex
+```
 
-如遇GitHub访问问题，使用SteamCommunity302加速：
-1. 安装并启动SteamCommunity302
-2. 启用"加速GitHub"功能
-3. 重新尝试下载
+Windows 也可用 Winget，或从源码安装。安装后启动器 `hermes` 会加入 `PATH`。
 
-### 配置
+【科学上网】安装脚本托管在 `hermes-agent.nousresearch.com`，境内下载需科学上网；配置 `https_proxy` 后脚本自动走代理。模型与 Provider 调用是否需科学上网，取决于用官方 Key 还是中转 Key。
 
-1. 运行 `hermes` 启动
-2. 按提示完成初始化配置
+### 初始化与配置
 
-### Skills目录
+```bash
+hermes            # 交互式对话（默认界面）
+hermes setup      # 配置向导：选模型与提供商
+hermes model      # 查看 / 切换当前模型
+hermes doctor     # 环境健康检查
+```
 
-- **位置**：`~/.hermes/skills/`（需手动创建）
-- **安装skills**：手动复制skills目录
+配置主文件 `~/.hermes/config.yaml`（只放设置，不放密钥）；密钥单独放 `~/.hermes/.env`。**切勿手改 config.yaml**，用 `hermes config set <KEY> <VALUE>`。
+
+### 桌面端（Hermes Agent Desktop）
+
+已安装 CLI 后直接运行：
+
+```bash
+hermes desktop     # 别名 hermes gui
+```
+
+桌面端与 CLI 共享同一套 `~/.hermes` 配置、Skill 与记忆，无需重复配置；可通过 `hermes config set display.skin <名称>` 实时换肤。
+
+### Skills 目录
+
+- **位置**：`~/.hermes/skills/`
+- **安装 skills**：手动复制 skills 目录到上述位置即可。
+
+### 关键路径
+
+```bash
+~/.hermes/config.yaml      # 主配置（仅设置）
+~/.hermes/.env             # 密钥（仅 Key）
+~/.hermes/skills/          # 已安装 Skill
+~/.hermes/skins/           # 自定义主题
+~/.hermes/state.db         # 会话数据库
+```
 
 ---
 
@@ -294,7 +322,7 @@ Get-ChildItem "C:\Users\GLY\.config\opencode\skills" | Select-Object Name
 
 - [Claude Code](https://github.com/anthropics/claude-code)
 - [OpenCode](https://github.com/opencode-ai/opencode)
-- [Hermes](https://github.com/nicepkg/hermes)
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent)（文档 https://hermes-agent.nousresearch.com/docs/）
 - [DevEco Code](https://developer.huawei.com/consumer/cn/deveco-studio/)
 - [OpenHarmony Skills](https://github.com/openharmonyinsight/openharmony-skills)
 - [SteamCommunity302](https://steamcommunity.com/chatgroups/)
